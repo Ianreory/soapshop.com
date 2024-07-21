@@ -19,10 +19,10 @@ const Navbar = () => {
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 py-12">
         <Link to="/" className="flex items-center gap-2 text-lg font-semibold md:text-base">
           <img src="/public/photo.png" alt="" width={90} height={90} />
-          <span className="sr-only">Library App</span>
+          <span className="sr-only">Shop</span>
         </Link>
-        <Link to="/books" className="text-muted-foreground transition-colors hover:text-foreground">
-          Library
+        <Link to="/" className="text-muted-foreground transition-colors hover:text-foreground">
+          Shop
         </Link>
       </nav>
       <Sheet>
@@ -36,10 +36,10 @@ const Navbar = () => {
           <nav className="grid gap-6 text-lg font-medium">
             <Link to="/" className="flex items-center gap-2 text-lg font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="sr-only">Library App</span>
+              <span className="sr-only">Shop</span>
             </Link>
             <Link to="/" className="text-muted-foreground hover:text-foreground">
-              Library
+              Shop
             </Link>
           </nav>
         </SheetContent>
@@ -65,7 +65,13 @@ const Navbar = () => {
               <Link to="/profile">My Profile</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link to="/borrow">My Borrow</Link>
+              <Link to="/carts">Shooping Cart</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link to="/users/products">My Product</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link to="/order/list">Order</Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
