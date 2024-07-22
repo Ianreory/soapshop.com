@@ -31,9 +31,6 @@ export default function ListOrder() {
     }
   }
 
-  const formatIDR = (price: number) => {
-    return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(price);
-  };
 
   return (
     <Layout>
@@ -62,7 +59,7 @@ export default function ListOrder() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {data.map((product) => (
+                {data.map(() => (
                   <TableRow >
                     <TableCell></TableCell>
                     <TableCell></TableCell>

@@ -1,5 +1,3 @@
-import Product from "@/components/cart-product";
-import { Description } from "@radix-ui/react-dialog";
 import { z } from "zod";
 
 export interface IProduct {

@@ -13,7 +13,7 @@ import { LoginSchema } from "@/utils/types/auth";
 
 function Login() {
   const [body, setBody] = useState<LoginSchema>({ email: "", password: "" });
-  const [error, setError] = useState("");
+ 
   const navigate = useNavigate();
 
   async function handleSubmit() {
@@ -22,7 +22,7 @@ function Login() {
       Cookies.set("token", response.data.token);
       navigate("/");
     } catch (error) {
-      setError("Login failed. Please try again."); 
+      console.log(error);
     }
   }
 

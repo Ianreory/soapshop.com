@@ -50,7 +50,6 @@ export default function AddProduct() {
       navigate("/users/products");
       console.log(response);
     } catch (error) {
-      setErrors({ general: "Product creation failed. Please try again." });
       console.error(error);
     }
   }

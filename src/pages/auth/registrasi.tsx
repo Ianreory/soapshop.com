@@ -1,9 +1,9 @@
 import Layout from "@/components/layout";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RegisterSchema } from "@/utils/types/auth";
 import { userRegistrasi } from "@/utils/apis/auth";
 import { Button } from "@/components/ui/button";
@@ -17,13 +17,13 @@ export default function Register() {
     address: "",
     phone_number: "",
   });
-  const [error, setError] = useState("");
+  const [, setError] = useState("");
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); // Prevents the default form submission behavior
     try {
       const response = await userRegistrasi(body);
       navigate("/");
-      e.preventDefault();
       console.log(response);
     } catch (error) {
       setError("Registrasi failed. Please try again.");
@@ -54,7 +54,7 @@ export default function Register() {
 
             <Label htmlFor="phoneNumber">Phone number</Label>
             <Input id="phoneNumber" value={body.phone_number} onChange={(e) => setBody({ ...body, phone_number: e.target.value })} />
-            <Button type="submit" className="w-full mt-4 active:bg-black" onClick={() => handleSubmit()}>
+            <Button type="submit" className="w-full mt-4 active:bg-black" onClick={(e) => handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>)}>
               submit
             </Button>
           </CardContent>

@@ -1,4 +1,4 @@
-import { z } from "zod";
+
 import { IResponse } from "../types/api";
 import { CreateProductsSchema, IProduct } from "../types/product";
 import axiosWithConfig from "./axios-with-config";

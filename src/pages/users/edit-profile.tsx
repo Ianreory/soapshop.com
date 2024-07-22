@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { deleteProfile, getProfile, updateProfile } from "@/utils/apis/users";
 import { IUser, ProfileSchema } from "@/utils/types/users";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function EditProfile() {
@@ -42,6 +42,7 @@ export default function EditProfile() {
   async function handleUpdate() {
     try {
       const response = await updateProfile(data);
+      console.log(response);
       navigate("/profile");
     } catch (error) {
       alert("Failed to update profile");

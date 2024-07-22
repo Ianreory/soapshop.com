@@ -1,5 +1,5 @@
 import { IResponse } from "../types/api";
-import { CartSchema, ICart } from "../types/carts";
+import { CartSchema} from "../types/carts";
 import { IUser } from "../types/users";
 import axiosWithConfig from "./axios-with-config";
 

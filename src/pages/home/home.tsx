@@ -5,7 +5,6 @@ import { getProducts } from "@/utils/apis/product";
 import { IProduct } from "@/utils/types/product";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
   const [data, setBody] = useState<IProduct[]>([]);
 
@@ -22,15 +21,13 @@ export default function Home() {
     }
   }
 
-
-
   return (
     <Layout>
       <div className="min-h-screen flex flex-col items-center justify-center dark:bg-gray-900">
         <HomePage />
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.map((product) => (
-            <Product key={product.id} navigate={`/product/${product.id}`} data={product}  />
+            <Product key={product.product_id} navigate={`/product/${product.product_id}`} data={product} />
           ))}
         </div>
       </div>

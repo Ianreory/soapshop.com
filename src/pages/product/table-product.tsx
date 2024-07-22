@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { IProduct } from "@/utils/types/product";
 import { getUserProduct } from "@/utils/apis/product";
@@ -72,7 +72,7 @@ export default function TableProduct() {
                     <TableCell>{product.product_name}</TableCell>
                     <TableCell>{formatIDR(product.price)}</TableCell>
                     <TableCell>{product.stock}</TableCell>
-                    <TableCell>{product.desciption}</TableCell>
+                    <TableCell>{product.description}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
